@@ -45,6 +45,12 @@ export AR=${TARGET}-ar
 export RANLIB=${TARGET}-ranlib
 export READELF=${TARGET}-readelf
 
+# ⚙️ 靜態編譯選項
+export LDFLAGS="-static"
+export CFLAGS="-static"
+export CPPFLAGS="-static"
+
+LDFLAGS="$LDFLAGS" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
 ac_cv_file__dev_ptmx=yes ac_cv_file__dev_ptc=no ./configure \
   --host=$TARGET \
   --build=$(uname -m)-pc-linux-gnu \
